@@ -138,9 +138,12 @@ include_once 'include/slider.php';
         </div>
       </div>
       <!-- END main-content -->
+      <!-- Start sidebar -->
       <?php
       include_once 'include/sidebar.php';
       ?>
+      <!-- END sidebar -->
+
     </div>
   </div>
 </section>
