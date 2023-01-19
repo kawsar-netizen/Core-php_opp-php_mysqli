@@ -24,8 +24,8 @@ class Database{
     // Select Query
     public function select($query){
         $result = mysqli_query($this->link,$query) or die($this->link->error. __LINE__);
-        if(mysqli_num_rows($result)>0){
-            return $result;
+        if(mysqli_num_rows($result) > 0){
+            return mysqli_num_rows($result);
         }else{
             return false;
         }
