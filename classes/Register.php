@@ -28,8 +28,8 @@ class Register{
     $mail->SMTPAuth   = true;
     $mail->Host       = 'smtp.gmail.com'; 
     $mail->Username   = 'kawsarkhanbd3@gmail.com'; 
-    $mail->Password   = 'kawsarkhan94$#@';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Password   = 'hlw123456';
+    $mail->SMTPSecure = 'tls';
     $mail->Port       = 465;  
 
     $mail->setFrom('kawsarkhanbd3@gmail.com', $name);

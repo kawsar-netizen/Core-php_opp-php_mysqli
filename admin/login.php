@@ -1,3 +1,7 @@
+<?
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -15,6 +19,22 @@
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
+                <!-- alert for message -->
+            <span>
+                    <?php
+                    if(isset($_SESSION['status'])){
+                        ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <?=$_SESSION['status']?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php
+                    }
+                    
+                    ?>
+                </span>
                 <div class="card">
                     <h5 class="card-header">Login Form</h5>
                     <div class="card-body">
