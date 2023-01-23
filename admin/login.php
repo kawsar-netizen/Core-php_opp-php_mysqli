@@ -1,5 +1,14 @@
 <?
 session_start();
+include_once '../classes/AdminLogin.php';
+$al = new AdminLogin();
+
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+ $email = $_POST['email'];
+ $password = md5($_POST['password']);
+ $chlogin = $al->UserLogin($email,$password);
+}
+
 ?>
 
 <!doctype html>
@@ -38,7 +47,7 @@ session_start();
                 <div class="card">
                     <h5 class="card-header">Login Form</h5>
                     <div class="card-body">
-                        <form>
+                        <form action="" method="POST">
                             <div class="form-group">
                                 <label>Email address</label>
                                 <input type="email" name="email" class="form-control">
