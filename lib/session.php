@@ -22,7 +22,7 @@
     }
     public static function destroy(){
         session_destroy();
-        header('Location:index.php');
+        header('Location:login.php');
     }
 
     public static function checkSession(){

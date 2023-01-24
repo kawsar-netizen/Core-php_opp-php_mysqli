@@ -1,6 +1,6 @@
 <?php
 include_once '../lib/session.php';
-Session::init();
+Session::loginCheck();
 include_once '../lib/database.php';
 include_once '../helpers/format.php';
 
