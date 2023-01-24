@@ -50,7 +50,7 @@ class Register{
     $name = $this->fr->Validation($data['name']);
     $phone = $this->fr->Validation($data['phone']);
     $email = $this->fr->Validation($data['email']);
-    $password = $this->fr->Validation($data['password']);
+    $password = md5($this->fr->Validation($data['password']));
     $v_token = md5(rand());
 
 

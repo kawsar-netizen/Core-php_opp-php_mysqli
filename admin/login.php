@@ -1,12 +1,12 @@
-<?
-session_start();
+<?php
+
 include_once '../classes/AdminLogin.php';
 $al = new AdminLogin();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
  $email = $_POST['email'];
  $password = md5($_POST['password']);
- $chlogin = $al->UserLogin($email,$password);
+ $chlogin = $al->LoginUser($email,$password);
 }
 
 ?>
@@ -29,6 +29,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
                 <!-- alert for message -->
+            <span>
+                    <?php
+                    if(isset($chlogin)){
+                        ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <?= $chlogin?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <?php
+                    }
+                    
+                    ?>
+                </span>
             <span>
                     <?php
                     if(isset($_SESSION['status'])){
